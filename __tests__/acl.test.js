@@ -8,7 +8,7 @@ const request = supertest(app);
 let testWriter;
 
 beforeAll(async () => {
-  sequelizeDatabase.sync();
+ await sequelizeDatabase.sync();
   testWriter = await userModel.create({
     username: 'writer',
     password: 'pass123',

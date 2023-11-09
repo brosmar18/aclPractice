@@ -22,6 +22,18 @@ app.get('/read', bearAuth, acl('read'), (req, res, next) => {
     res.status(200).send('You have read permission');
 });
 
+app.post('/create', bearAuth, acl('create'), (req, res, next) => {
+    res.status(200).send('You have create permission');
+});
+
+app.put('/update', bearAuth, acl('update'), (req, res, next) => {
+    res.status(200).send('You have update permission');
+});
+
+app.delete('/delete', bearAuth, acl('delete'), (req, res, next) => {
+    res.status(200).send('You have delete permission');
+});
+
 app.get('/', (req, res, next) => {
     res.status(200).send("Hello World!");
 });
