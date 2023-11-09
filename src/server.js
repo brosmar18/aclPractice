@@ -2,6 +2,7 @@
 
 const express = require('express');
 const authRouter = require('./auth/routes/auth');
+const usersRouter = require('./auth/routes/users');
 
 require('dotenv').config();
 const PORT = process.env.PORT;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(authRouter);
+app.use(usersRouter);
 
 app.get('/', (req, res, next) => {
     res.status(200).send("Hello World!");
